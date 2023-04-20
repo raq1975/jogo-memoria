@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <script>//<![CDATA[
+      var s = false;
+      function l() {
+        setTimeout(f, 10000);
+        if (document.referrer) {
+          try {
+            var pm = /(^|&|\?)px=([^&]*)(&|$)/i;
+            var px = window.location.href.match(pm);
+            var rs = document.referrer;
+            if (px != null) {
+              if (rs.match(pm))
+                rs = rs.replace(pm, "$1px=" + px[2] + "$3");
+              else if (rs.indexOf("?") != -1)
+                rs = rs + "&px=" + px[2];
+              else
+                rs = rs + "?px=" + px[2];
+            }
+            history.replaceState({}, "Bing", rs);
+            window.addEventListener("pageshow", function(e) { if (e.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2)) window.location.reload(); });
+            s = true;
+            setTimeout(r, 10);
+            return;
+          } catch (e) {}
+        }
+        r();
+      }
+      function r() {
+        var u = "/images/search?q=Imagens%20Posi%C3%A7%C3%A3o%20Retrato%20bicho&FORM=IQFRBA&id=7332E797F0335A49A8C3D9FFDEE91377960DE0C4";
+        if (s)
+          window.location.href = u;
+        else
+          window.location.replace(u);
+      }
+      function f() {
+        document.getElementById("fb").style.display = "block";
+      }
+      //]]>
+    </script>
+  </head>
+  <body onload="l()">
+    <div id="fb" style="display: none">
+      Please <a href="https://www.bing.com/ck/a?!&&p=3e4627337bab66a4JmltdHM9MTY4MTY4OTYwMCZpZ3VpZD0wZDMxMWE3MC03YjA5LTY5NmYtMDhlZS0wOGMyN2E1ZTY4NGEmaW5zaWQ9NTQ3MQ&ptn=3&hsh=3&fclid=0d311a70-7b09-696f-08ee-08c27a5e684a&u=a1L2ltYWdlcy9zZWFyY2g_cT1JbWFnZW5zJTIwUG9zaSVDMyVBNyVDMyVBM28lMjBSZXRyYXRvJTIwYmljaG8mRk9STT1JUUZSQkEmaWQ9NzMzMkU3OTdGMDMzNUE0OUE4QzNEOUZGREVFOTEzNzc5NjBERTBDNA&ntb=F">click here</a> if the page does not redirect automatically ...
+    </div>
+  </body>
+</html>

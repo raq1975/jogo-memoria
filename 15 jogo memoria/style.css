@@ -1,0 +1,99 @@
+
+*{ 
+    <padding:0>
+        margin:
+          }
+
+          text-align: center;
+            }
+
+            .carta: active{
+                transform: scale(0,97);
+                transition:transform .2   
+                s;
+
+            }
+
+            . carta . flip {
+                transform: rotapey(180deg);
+
+            } 
+
+            .jogo- memoria{
+                width:640px;
+                height:640px;
+                margin: auto;
+                display:
+                flex-wrap: wrap;
+                perspective:1000opx;
+                 }
+
+
+
+                 .carta{
+                    width: calc( 25% - 10px );
+                    height:calc( 33,333% - 10px);
+                    margin: 5px;
+                    position: relative;
+                    box-shadow:1px 1px 1px blue  blue;
+                    transform: scale(1);
+                    transform-style: preserve-3d;
+                    transition:transform .5s;
+                      }
+
+
+
+
+                      .front.face{
+                        width: 100%;
+                        height: 100%
+                        padding:20px;
+                        position:absolute;
+                        border-radius: 5px;
+                        background: blue;
+
+                      }
+
+
+
+
+                      .back-face{
+                        width:100%
+                        height:100%;
+                        padding:20px;
+                        position: absolute;
+                        border-radius:5px;
+                        background:blue;
+                        backface-visibility:hidden;
+                      }
+
+
+
+                      h1{
+                        padding-left: 5px;
+                        padding-right:5px;
+                        background-image: linear-gradient(to leftt,blue);
+                        color: blue;
+
+                      }
+
+                      input{
+                        background-color:blue;
+                        text-align:center;
+                        color:blue;
+                        height: 30px;
+                        width: 100px;
+                        margin-top:10px;
+                        margin-left: 46%;
+                        position:absolute;
+                        border-radius: 15px;
+                      }
+                      
+
+
+
+
+                 
+
+        
+}

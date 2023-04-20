@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    !DOCTYPE html>
+    <html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularios</title>
+        <style>
+            body{
+                margin: 10%;
+                background-color: darkgray;
+            }
+            h2{
+                background-color: darkslategrey;
+                color: darkgray;
+            }
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+    
+    
+        <h2>Você foi no estadio em um dia de jogos?</h2>
+        <input name="pesquisa-sim" type="radio" value="sim" id="pesquisa-sim">
+        <label name="pesquisa-sim" for="pesquisa-sim">
+            Já fui ao estadio.
+        </label>
+        
+        <input name="pesquisa-sim" type="radio" value="não" id="pesquisa-nao">
+        <label name="pesquisa-sim" for="pesquisa-nao">
+            Não fui ao estadio.
+        </label>
+    
+        <h2>Aproximadamente quantas vezes?</h2>
+        <input name="vezes" type="checkbox"  id="inlineCheckbox1" value="0">
+        <label name="vezes" for="inlineCheckbox1">0 vezes</label>
+        <input name="vezes" type="checkbox"  id="inlineCheckbox1" value="1a3">
+        <label name="vezes" for="inlineCheckbox1">1 a 3 vezes</label>
+        <input name="vezes" type="checkbox"  id="inlineCheckbox1" value="3a7">
+        <label name="vezes" for="inlineCheckbox1">3 a 7 vezes</label>
+        <input name="vezes" type="checkbox"  id="inlineCheckbox1" value="7">
+        <label name="vezes" for="inlineCheckbox1">Acima de 7 vezes</label>
+        
+        <h2>Deixe aqui sua sugestão.</h2>
+        <input name="sugestao" type="text" placeholder="Mensagem">
+        <button type="submit">Cadastre</button>
+    </form>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx2UD_ZNMXVY_J_7L9ocLF9JD24b0Bmb3RiXv9ncHonnxTfEYixO5kQyZLTaxP3Mc2ZCQ/exec'
+        const form= document.forms[ 'submit-to-google-sheet1']
+    
+        form.addEventListener('submit', e=>{
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log ('Sucess!', response))
+            .catch(error => console.error('Error!' , error.message))
+            form.reset();
+        })
+    </script>
+    <!-- var sheetName = 'Sheet1'
+    var scriptProp = PropertiesService.getScriptProperties()
+    
+    function intialSetup () {
+    var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+    scriptProp.setProperty('key', activeSpreadsheet.getId())
+    }
+    
+    function doPost (e) {
+    var lock = LockService.getScriptLock()
+    lock.tryLock(10000)
+    
+    try {
+    var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+    var sheet = doc.getSheetByName(sheetName)
+    
+    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+    var nextRow = sheet.getLastRow() + 1
+    
+    var newRow = headers.map(function(header) {
+      return header === 'timestamp' ? new Date() : e.parameter[header]
+    })
+    
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+      .setMimeType(ContentService.MimeType.JSON)
+    }
+    
+    catch (e) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+      .setMimeType(ContentService.MimeType.JSON)
+    }
+    
+    finally {
+    lock.releaseLock()
+    }
+    } -->
+    
+    </body>
+    </html>
+        <h1>Formularios</h1>
+        <form name="submit-to-google-sheet1">
+            <h2>Qual seu time do coração?</h2>
+            <select name="time">
+                <option value="Cruzeiro">Cruzeiro</option>
+                <option value="America">America</option>
+                <option value="VilaNova">Vilanova</option>
+                <option value="Atletico">Atletico</option>
+            </select>
+            <h2>Qual brinde você gostaria de ganhar?</h2>
+            <input name="brinde" type="checkbox" value="sim" id="brinde">
+            <label name="brinde" for="brinde">
+                Camisa de time
+            </label>
+    
+            <input name="brinde2" type="checkbox" value="sim" id="brinde2">
+            <label name="brinde2" for="brinde2">
+                Ingresso Vip
+            </label>
+    
+            <h2>Você foi no estadio em um dia de jogos?</h2>
+            <input name="pesquisa-sim" type="radio" value="sim" id="pesquisa-sim">
+            <label name="pesquisa-sim" for="pesquisa-sim">
+                Já fui ao estadio.
+            </label>
+            
+            <input name="pesquisa-sim" type="radio" value="não" id="pesquisa-nao">
+            <label name="pesquisa-sim" for="pesquisa-nao">
+                Não fui ao estadio.
+            </label>
+        
+        form.reset();
+    })
+    </script>
+    <!-- var sheetName = 'Sheet1'
+    var scriptProp = PropertiesService.getScriptProperties()
+    
+    function intialSetup () {
+    var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+    scriptProp.setProperty('key', activeSpreadsheet.getId())
+    }
+    
+    function doPost (e) {
+    var lock = LockService.getScriptLock()
+    lock.tryLock(10000)
+    
+    try {
+    var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+    var sheet = doc.getSheetByName(sheetName)
+    
+    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+    var nextRow = sheet.getLastRow() + 1
+    
+    var newRow = headers.map(function(header) {
+    return header === 'timestamp' ? new Date() : e.parameter[header]
+    })
+    
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+    
+    return ContentService
+    .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+    .setMimeType(ContentService.MimeType.JSON)
+    }
+    
+    catch (e) {
+    return ContentService
+    .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+    .setMimeType(ContentService.MimeType.JSON)
+    }
+    
+    finally {
+    lock.releaseLock()
+    }
+    } -->
+    
+    </body>
+    
+    
+    
+    
+    
+
+
+
+    
+</body>
+</html>
